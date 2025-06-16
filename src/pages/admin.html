@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="bg-amber-500">
+
+            <div class="mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="flex items-center justify-between h-16">
+
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="flex-shrink-0 text-white font-bold text-xl">
+                            <img src="../assets/logo.png" alt="Logo Moviefy" class="h-20 w-22">
+                        </a>
+
+
+                        <div class="hidden md:block">
+                            <div class="ml-10 flex items-baseline space-x-4 text-black">
+                                <a href="#"
+                                    class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-medium transition duration-200 ease-in-out">Filmes</a>
+                                <a href="#"
+                                    class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-medium transition duration-200 ease-in-out">Usuários</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="-mr-2 flex md:hidden ml-auto">
+                        <button id="mobileMenuButton" type="button"
+                            class="inline-flex items-center justify-center p-2 rounded-md text-black hover:bg-amber-600 focus:outline-none focus:bg-amber-600 focus:text-black transition duration-200 ease-in-out"
+                            ari-label="Menu" aria-expanded="false">
+                            <svg class="h-6 w-6 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mobileMenu" class="md:hidden hidden bg-amber-500 px-2 pt-2 pb-3 space-y-1 sm:px-3">
+
+                <div class="px-2 pt-2 pb-3 sm:px-3">
+                    <a href="#"
+                        class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-medium text-black transition duration-200 ease-in-out">Filmes</a>
+                    <a href="#"
+                        class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-medium text-black transition duration-200 ease-in-out">Usuários</a>
+                </div>
+            </div>
+        </nav>
+
+
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+    <script src="../scripts/admin.js"></script>
+</body>
+
+</html>
