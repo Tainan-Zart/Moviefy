@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="h-full">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pagina Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="h-full flex flex-col">
 
     <header>
         <nav class="bg-amber-500">
@@ -18,26 +18,28 @@
                 <div class="flex items-center justify-between h-16">
 
                     <div class="flex items-center space-x-4">
-                        <a href="#" class="flex-shrink-0 text-white font-bold text-xl">
+
+                        <a href="#" id="navAdmin">
                             <img src="../assets/logo.png" alt="Logo Moviefy" class="h-20 w-22">
                         </a>
 
-
                         <div class="hidden md:block">
+
                             <div class="ml-10 flex items-baseline space-x-4 text-black">
-                                <a href="#"
-                                    class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-medium transition duration-200 ease-in-out">Filmes</a>
-                                <a href="#"
-                                    class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-medium transition duration-200 ease-in-out">Usuários</a>
+                                <a href="#" id="navFilme"
+                                    class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition duration-200 ease-in-out">Filmes</a>
+                                <a href="#" id="navUsuario"
+                                    class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition duration-200 ease-in-out">Usuários</a>
                             </div>
                         </div>
-
                     </div>
 
                     <div class="-mr-2 flex md:hidden ml-auto">
-                        <button id="mobileMenuButton" type="button"
+
+                        <button id="navBotao" type="button"
                             class="inline-flex items-center justify-center p-2 rounded-md text-black hover:bg-amber-600 focus:outline-none focus:bg-amber-600 focus:text-black transition duration-200 ease-in-out"
                             ari-label="Menu" aria-expanded="false">
+
                             <svg class="h-6 w-6 " stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 6h16M4 12h16M4 18h16"></path>
@@ -47,29 +49,93 @@
                 </div>
             </div>
 
-            <div id="mobileMenu" class="md:hidden hidden bg-amber-500 px-2 pt-2 pb-3 space-y-1 sm:px-3">
-
+            <div id="navMenu" class="md:hidden hidden bg-amber-500 px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <div class="px-2 pt-2 pb-3 sm:px-3">
-                    <a href="#"
-                        class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-medium text-black transition duration-200 ease-in-out">Filmes</a>
-                    <a href="#"
-                        class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-medium text-black transition duration-200 ease-in-out">Usuários</a>
+                    <a href="#" id="navMenuFilme"
+                        class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition duration-200 ease-in-out">Filmes</a>
+                    <a href="#" id="navMenuUsuario"
+                        class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition duration-200 ease-in-out">Usuários</a>
                 </div>
             </div>
         </nav>
-
-
     </header>
 
-    <main>
+    <main class="flex-grow p-6 bg-black">
+        <div id="adminSecao">
+            <h1 class="text-white">Painel Administrativo</h1>
+        </div>
 
+        <div id="usuarioSecao" class="hidden">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-amber-500">Usuários</h2>
+                <button id="botaoAbrirUsuarioModal"
+                    class="bg-amber-500 text-black font-bold px-8 py-2 rounded-md hover:bg-amber-600 transition duration-200">
+                    NOVO
+                </button>
+            </div>
+
+            <div id="usuarioModal"
+                class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4 hidden z-50">
+                <div class="bg-amber-500 rounded-lg shadow-xl w-full max-w-md mx-2 overflow-y-auto max-h-[90vh]">
+                    <div class="p-6">
+                        <h2 class="text-xl font-bold mb-4 text-black" id="modalTitle">Cadastrar Usuário</h2>
+                            <form id="usuarioForm">
+                                <div class="mb-4">
+                                    <label for="email" class="block text-sm font-medium text-black mb-1">E-mail</label>
+                                    <input type="email" id="email" name="email"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-base"
+                                        placeholder="exemplo@email.com" required>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="senha" class="block text-sm font-medium text-black mb-1">Senha</label>
+                                    <input type="password" id="senha" name="senha"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-base"
+                                        placeholder="••••••••" required>
+                                </div>
+
+                                <div class="mb-6">
+                                    <label for="tipoUsuario" class="block text-sm font-medium text-black mb-1">Tipo de
+                                        Usuário</label>
+                                    <select id="tipoUsuario" name="tipoUsuario"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 text-base"
+                                        required>
+                                        <option value="" disabled selected>Selecione um tipo</option>
+                                        <option value="admin">Administrador</option>
+                                        <option value="comum">Comum</option>
+                                    </select>
+                                </div>
+
+                                <div class="flex justify-end space-x-3">
+                                    <button type="button" id="botaoFecharUsuarioModal"
+                                        class="px-5 py-2.5 rounded-md font-bold text-amber-600 bg-zinc-800 hover:bg-black transition-colors duration-200">
+                                        Cancelar
+                                    </button>
+                                    <button type="submit"
+                                        class="px-5 py-2.5 rounded-md font-bold text-amber-600 bg-black hover:bg-zinc-900 transition-colors duration-200 focus:ring-2 focus:ring-amber-600">
+                                        Salvar
+                                    </button>
+                                </div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="listaUsuario"></div>
+        </div>
+
+        <div id="filmeSecao" class="hidden">
+            <h1 class="text-white">Filmes</h1>
+        </div>
     </main>
 
-    <footer>
+
+    <footer class="bg-zinc-900 text-white p-4">
 
     </footer>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"></script>
+    <script src="../scripts/db.js"></script>
     <script src="../scripts/admin.js"></script>
 </body>
 
