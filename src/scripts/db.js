@@ -2,24 +2,23 @@ const db = new PouchDB('Moviefy');
 
 
 //#region Usuario
-function salvarUsuario(email, senha, tipo) {
+async function salvarUsuarioAsync(email, senha, tipo) {
 
     const usuario = {
         _id: email,
         email: email,
         senha: senha,
-        tipo: tipo
+        tipo: tipo,
+        tipoDocumento : 'usuario'
     };
-    db.put(usuario);
+    await db.put(usuario);
 }
 
-
-async function buscarUsuarioPorEmailDb(email) {
+async function buscarUsuarioPorEmailAsync(email) {
     try {
-        const doc = await db.get(email);
-        return doc; 
+        const usuario = await db.get(email);
+        return usuario; 
     } catch (err) {
-        console.log(err);
         if (err.name === 'not_found') {
             return null; 
         } else {
@@ -28,7 +27,7 @@ async function buscarUsuarioPorEmailDb(email) {
     }
 }
 
-async function editarUsuarioDb(email, senha, tipo){
+async function editarUsuarioAsync(email, senha, tipo){
    
     try{
         await db.get(email).then(function (usuario) {
@@ -42,7 +41,7 @@ async function editarUsuarioDb(email, senha, tipo){
    
 }
 
-async function excluirUsuarioDb(email){
+async function excluirUsuarioAsync(email){
 
     try{
         await db.get(email).then(function (doc) {
@@ -58,39 +57,53 @@ async function excluirUsuarioDb(email){
 
 //#endregion
 
+//#region Filme 
+async function salvarFilmeAsync(filme) {
 
-function criarFilme(id, titulo, genero, ano) {
-    const filme = {
-        _id: id,
-        titulo: titulo,
-        genero: genero,
-        ano: ano
-    };
+    console.log(filme);
 
     try {
-        const response = db.put(filme);
-        console.log('Filme criado com sucesso:', response);
+        await db.put(filme);
     } catch (err) {
-        console.error('Erro ao criar filme:', err);
+        alert(err);
     }
 }
 
-function getFilmeById(id) {
+async function buscarFilmePorTitulo(titulo) {
     try {
-        const filme = db.get(id);
+        const filme = await db.get(titulo);
         return filme;
     } catch (err) {
-        console.error('Filme não encontrado:', err);
-        throw new Error('Filme não encontrado');
+        if (err.name === 'not_found') {
+            return null; 
+        } else {
+            alert(err);
+        }
     }
 }
 
-function listarFilmes() {
-    try {
-        const result = db.allDocs({ include_docs: true });
-        return result.rows.map(row => row.doc);
-    } catch (err) {
-        console.error('Erro ao listar filmes:', err);
-        throw new Error('Erro ao listar filmes');
+async function editarFilmeAsync(filme) {
+    try{
+        await db.get(filme.titulo).then(function (filme) {
+            filme.sinopse = filme.sinopse;
+            filme.linkTrailer = filme.linkTrailer;
+            filme.imagem = filme.imagem;
+            filme.categoria = filme.categoria;
+            db.put(filme);
+        });
+    }catch (err) {
+        alert(err);
     }
 }
+
+async function excluirFilmeAsync(titulo){
+
+    try{
+        await db.get(titulo).then(function (filme) {
+            return db.remove(filme);
+        });
+    }catch(err){
+        alert(err);
+    }
+}
+//#endregion
