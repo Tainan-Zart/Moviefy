@@ -82,13 +82,15 @@ async function buscarFilmePorTitulo(titulo) {
     }
 }
 
-async function editarFilmeAsync(filme) {
+async function editarFilmeAsync(filmeAtualizado) {
     try{
-        await db.get(filme.titulo).then(function (filme) {
-            filme.sinopse = filme.sinopse;
-            filme.linkTrailer = filme.linkTrailer;
-            filme.imagem = filme.imagem;
-            filme.categoria = filme.categoria;
+        await db.get(filmeAtualizado.titulo).then(function (filme) {
+            filme.titulo = filmeAtualizado.titulo;
+            filme.sinopse = filmeAtualizado.sinopse;
+            filme.linkTrailer = filmeAtualizado.linkTrailer;
+            filme.imagem = filmeAtualizado.imagem;
+            filme.categoria = filmeAtualizado.categoria;
+            filme.tipoDocumento = filmeAtualizado.tipoDocumento
             db.put(filme);
         });
     }catch (err) {

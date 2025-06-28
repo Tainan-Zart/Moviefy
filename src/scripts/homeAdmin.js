@@ -11,6 +11,10 @@ document.getElementById('navBotao').addEventListener('click', () => {
     navMenu.classList.toggle('hidden');
 });
 
+document.getElementById('sairBotao').addEventListener('click', () => {
+    window.location.href = 'login.html';
+});
+
 document.getElementById('navAdmin').addEventListener('click', () => {
     adminSecao.classList.remove('hidden');
     usuarioSecao.classList.add('hidden');
@@ -219,20 +223,16 @@ async function salvarEditarFilme() {
     const titulo = document.getElementById('tituloFilme').value.trim();
     const sinopse = document.getElementById('sinopseFilme').value;
     const linkTrailer = document.getElementById('linkTrailerFilme').value;
-    const imagem = document.getElementById('imagemFilme').files[0];
+    const imagem = document.getElementById('imagemFilme').value;
     const categoria = document.getElementById('categoriaFilme').value;
 
-    let imagemBase64 = null;
-    if (imagem) {
-        imagemBase64 = await converterImagemParaBase64(imagem);
-    }
 
     const filme = {
         _id: titulo,
         titulo: titulo,
         sinopse: sinopse,
         linkTrailer: linkTrailer,
-        imagem: imagemBase64,
+        imagem: imagem,
         categoria: categoria,
         tipoDocumento: 'filme'
     }
@@ -245,15 +245,6 @@ async function salvarEditarFilme() {
     
     carregarFilmes();
     abrirFecharFilmeModal();
-}
-
-function converterImagemParaBase64(imagem) {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onloadend = () => resolve(reader.result);
-        reader.onerror = reject;
-        reader.readAsDataURL(imagem);
-    });
 }
 
 async function cadastrarFilme(filme) {

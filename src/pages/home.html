@@ -1,43 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
 
-    <header>
+<body class="h-full">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-white shadow">
         <nav class="bg-amber-500">
             <div class="mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-16">
                     <div class="flex items-center space-x-4">
-                        <a href="#" id="navAdmin">
+                        <a href="#" id="navLogo">
                             <img src="../assets/logo.png" alt="Logo Moviefy" class="h-20 w-22">
                         </a>
 
                         <div class="hidden xl:block">
                             <div class="ml-10 flex items-baseline space-x-4 text-black">
-                                <a href="#" class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Ação</a>
-                                <a href="#" class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Aventura</a>
-                                <a href="#" class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Comédia</a>
-                                <a href="#" class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Drama</a>
-                                <a href="#" class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Terror</a>
-                                <a href="#" class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Suspense</a>
-                                <a href="#" class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Ficção Científica</a>
-                                <a href="#" class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Romance</a>
-                                <a href="#" class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Fantasia</a>
-                                <a href="#" class="hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Animação</a>
+                                <a href="#" value="acao"
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Ação</a>
+                                <a href="#" value="aventura"
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Aventura</a>
+                                <a href="#" value="comedia"
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Comédia</a>
+                                <a href="#" value="drama"
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Drama</a>
+                                <a href="#" value="terror"
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Terror</a>
+                                <a href="#" value="suspense"
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Suspense</a>
+                                <a href="#" value="ficcao-cientifica"
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Ficção Científica</a>
+                                <a href="#" value="romance"
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Romance</a>
+                                <a href="#" value="fantasia"
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Fantasia</a>
+                                <a href="#" value="anime"
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Anime</a>
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="-mr-2 flex xl:hidden ml-auto">
                         <button id="navBotao" type="button"
                             class="inline-flex items-center justify-center p-2 rounded-md text-black hover:bg-amber-600 focus:outline-none focus:bg-amber-600 focus:text-black transition duration-200 ease-in-out"
                             aria-label="Menu" aria-expanded="false">
-    
+
                             <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 6h16M4 12h16M4 18h16"></path>
@@ -46,31 +58,47 @@
                     </div>
                 </div>
             </div>
-    
+
             <div id="navMenu" class="xl:hidden hidden bg-amber-500 px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#" class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Ação</a>
-                <a href="#" class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Aventura</a>
-                <a href="#" class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Comédia</a>
-                <a href="#" class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Drama</a>
-                <a href="#" class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Terror</a>
-                <a href="#" class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Suspense</a>
-                <a href="#" class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Ficção Científica</a>
-                <a href="#" class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Romance</a>
-                <a href="#" class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Fantasia</a>
-                <a href="#" class="hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Animação</a>
+                <a href="#" value="acao"
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Ação</a>
+                <a href="#" valeu="aventura"
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Aventura</a>
+                <a href="#" value="comedia"
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Comédia</a>
+                <a href="#" value="drama"
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Drama</a>
+                <a href="#" value="terror"
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Terror</a>
+                <a href="#" value="suspense"
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Suspense</a>
+                <a href="#" value="ficcao-cientifica"
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Ficção Científica</a>
+                <a href="#" value="romance"
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Romance</a>
+                <a href="#" value="fantasia"
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Fantasia</a>
+                <a href="#" value="Anime"
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Anime
+                </a>
             </div>
         </nav>
     </header>
 
-    <main>
+    <main class="pt-20 p-4 bg-black min-h-screen">
 
+        <section id="filmeDestaqueSecao" class="bg-black w-full p-2 h-1/2"></section>
+        
+        <section id="filmesSecao" class="bg-black w-full p-4 h-1/2">
+            <h2 id="listaFilmeTitulo" class="text-xl font-bold text-white mb-4">Outros filmes para você</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4" id="filmesLista"></div>
+        </section>
+        
     </main>
-
-    
-
 
     <script src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"></script>
     <script src="../scripts/db.js"></script>
     <script src="../scripts/home.js"></script>
 </body>
+
 </html>
