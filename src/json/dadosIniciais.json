@@ -1,0 +1,578 @@
+[
+    {
+        "_id": "12345678-90ab-cdef-1234-567890abcdef",
+        "nome": "Admin",
+        "email": "admin@admin",
+        "senha": "admin",
+        "tipo": "admin",
+        "tipoDocumento": "usuario"
+    },
+    {
+        "_id": "abcdef12-3456-7890-abcd-ef1234567890",
+        "nome": "Usuário",
+        "email": "usuario@usuario",
+        "senha": "usuario",
+        "tipo": "usuario",
+        "tipoDocumento": "usuario"
+    },
+    {
+        "_id": "23456789-abcd-ef12-3456-7890abcdef12",
+        "titulo": "Top Gun: Maverick",
+        "sinopse": "Depois de mais de 30 anos de serviço como um dos principais aviadores da Marinha, Pete Maverick Mitchell está de volta, rompendo os limites como um piloto de testes corajoso. No mundo contemporâneo das guerras tecnológicas, Maverick enfrenta drones e prova que o fator humano ainda é essencial",
+        "anoLancamento": "2022",
+        "linkTrailer": "https://www.youtube.com/watch?v=qSqVVswa420",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvSa3vJqF5aaj4q2J50fnjQ9v4A6Zkbhr2sg&s",
+        "categoria": "aventura",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "23456789-0abc-def1-2345-67890abcdef1",
+        "titulo": "O Rei Leão",
+        "sinopse": "Simba, um jovem leão, é enganado por seu tio Scar e foge de casa. Anos depois, ele retorna para reivindicar seu lugar como rei da Savana.",
+        "anoLancamento": "2019",
+        "linkTrailer": "https://www.youtube.com/watch?v=J57HnR6FPW0",
+        "linkImagem": "https://br.web.img3.acsta.net/pictures/19/05/07/20/54/2901026.jpg",
+        "categoria": "aventura",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "27412647126789-0abc-def1-2345-67890abcdef9",
+        "titulo": "Dennis, o Pimentinha",
+        "sinopse": "A Sra. Wilson aceita hospedar o pestinha Dennis em sua casa enquanto os pais dele viajam. Ela só não imagina que o garoto é capaz de tantas travessuras, incluindo a destruição do premiado jardim que seu marido, o Sr. Wilson, cultiva há décadas.",
+        "anoLancamento": "1993",
+        "linkTrailer": "https://www.youtube.com/watch?v=8CogDP0vlfw",
+        "linkImagem": "https://br.web.img3.acsta.net/medias/nmedia/18/91/08/28/20128492.jpg",
+        "categoria": "comedia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "34567890-abcd-ef12-3456-7890abcdef12",
+        "titulo": "Star Wars: Episódio IV - Uma Nova Esperança",
+        "sinopse": "A Princesa Leia é capturada e levada para o planeta do malvado Darth Vader. R2-D2 e C-3PO, dois robôs, escapam com um plano para salvar a princesa e restaurar a liberdade na galáxia.",
+        "anoLancamento": "1977",
+        "linkTrailer": "https://www.youtube.com/watch?v=vZ734NWnAHA",
+        "linkImagem": "https://m.media-amazon.com/images/M/MV5BOWE0MDA0YjgtOGVhMi00NjY0LTkxNGQtYjVjMWU3ZTU5Mjc1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "categoria": "ficcao-cientifica",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "56789012-cdef-1234-5678-90abcdef1234",
+        "titulo": "O Senhor dos Anéis: As Duas Torres",
+        "sinopse": "Frodo e Sam continuam sua jornada para destruir o Um Anel, enquanto Aragorn, Legolas e Gimli tentam resgatar Merry e Pippin das garras de Saruman.",
+        "anoLancamento": "2002",
+        "linkTrailer": "https://www.youtube.com/watch?v=V75dMMIW2B4",
+        "linkImagem": "https://br.web.img3.acsta.net/medias/nmedia/18/92/91/32/20224832.jpg",
+        "categoria": "aventura",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "12345678-90ab-cdef-1234-567890abcdef",
+        "titulo": "O Senhor dos Anéis: A Sociedade do Anel",
+        "sinopse": "Frodo Bolseiro, um hobbit, herda um anel mágico que deve ser destruído para salvar a Terra Média. Ele parte em uma jornada épica com seus amigos e aliados para destruir o anel.",
+        "anoLancamento": "2001",
+        "linkTrailer": "https://www.youtube.com/watch?v=V75dMMIW2B4",
+        "linkImagem": "https://br.web.img3.acsta.net/medias/nmedia/18/92/91/32/20224832.jpg",
+        "categoria": "aventura",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+        "titulo": "Batman: O Cavaleiro das Trevas",
+        "sinopse": "Com a ajuda de Jim Gordon e Harvey Dent, Batman tem mantido a ordem na cidade de Gotham. Mas um jovem e anárquico criminoso conhecido como Coringa ganha força e decide instaurar um verdadeiro caos na cidade. O justiceiro será testado psicologicamente e fisicamente como nunca fora antes em um confronto bastante pessoal.",
+        "anoLancamento": "2008",
+        "linkTrailer": "https://www.youtube.com/watch?v=EXeTwQWrcwY",
+        "linkImagem": "https://play-lh.googleusercontent.com/b0bqoD27ib25NwPutF8Kf740iiFQ53CKUz27VBQkCQtvSfhdWQtb8vwFxxn-SzI-5ZATXXkDwf2qPODkNQ",
+        "categoria": "acao",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "b2c3d4e5-f6a7-8901-2345-67890abcdef1",
+        "titulo": "Mad Max: Estrada da Fúria",
+        "sinopse": "Após ser capturado por Immortan Joe, um guerreiro das estradas chamado Max se vê no meio de uma guerra mortal, iniciada pela Imperatriz Furiosa na tentativa de salvar um grupo de garotas. Também tentanto fugir, Max aceita ajudar Furiosa em sua luta contra Joe e se vê dividido entre mais uma vez seguir sozinho seu caminho ou ficar com o grupo.",
+        "anoLancamento": "2015",
+        "linkTrailer": "https://www.youtube.com/watch?v=hEJnMQG9ev8",
+        "linkImagem": "https://musicart.xboxlive.com/7/eea21900-0000-0000-0000-000000000002/504/image.jpg",
+        "categoria": "acao",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "c3d4e5f6-a7b8-9012-3456-7890abcdef12",
+        "titulo": "John Wick: De Volta ao Jogo",
+        "sinopse": "John Wick é um lendário assassino de aluguel aposentado, lidando com o luto após perder o grande amor de sua vida. Quando um gângster rouba seu carro e mata o cachorro que foi um presente de sua esposa, ele é forçado a voltar à ativa para se vingar.",
+        "anoLancamento": "2014",
+        "linkTrailer": "https://www.youtube.com/watch?v=C0BMx-qxsP4",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgEAfWNNa5y010tGzDJylMz1S3FgoDalty1g&s",
+        "categoria": "acao",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "d4e5f6a7-b8c9-0123-4567-890abcdef123",
+        "titulo": "Duro de Matar",
+        "sinopse": "O detetive John McClane está em Los Angeles para se encontrar com sua esposa, que trabalha em uma empresa japonesa. Porém, ele é surpreendido por um assalto no prédio, e acaba sendo a única esperança para os reféns.",
+        "anoLancamento": "1988",
+        "linkTrailer": "https://www.youtube.com/watch?v=jaJuwKCmJbY",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLE1wK4StiHCrBoKt-jKxCd6HeQ77fGy_0xg&s",
+        "categoria": "acao",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "e5f6a7b8-c9d0-1234-5678-90abcdef1234",
+        "titulo": "Missão: Impossível - Efeito Fallout",
+        "sinopse": "O agente Ethan Hunt e sua equipe do IMF, na companhia de aliados conhecidos, estão em uma corrida contra o tempo depois que uma missão dá errado.",
+        "anoLancamento": "2018",
+        "linkTrailer": "https://www.youtube.com/watch?v=wb49-oV0F78",
+        "linkImagem": "https://br.web.img3.acsta.net/c_310_420/pictures/18/05/14/17/09/5117345.jpg",
+        "categoria": "acao",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "f6a7b8c9-d0e1-2345-6789-0abcdef12345",
+        "titulo": "Jurassic Park: O Parque dos Dinossauros",
+        "sinopse": "Um parque construído por um milionário tem como habitantes dinossauros extintos, recriados em laboratório. Mas, o que parecia ser um sonho se torna um pesadelo quando a experiência sai do controle de seus criadores.",
+        "anoLancamento": "1993",
+        "linkTrailer": "https://www.youtube.com/watch?v=QWBKEmWWL38",
+        "linkImagem": "https://d2lmwphfp1cp4f.cloudfront.net/16125584/16125584.jpg",
+        "categoria": "aventura",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "a7b8c9d0-e1f2-3456-7890-abcdef123456",
+        "titulo": "Indiana Jones e os Caçadores da Arca Perdida",
+        "sinopse": "O arqueólogo e aventureiro Indiana Jones é contratado pelo governo dos Estados Unidos para encontrar a Arca da Aliança antes que os nazistas a utilizem para seus planos de dominação mundial.",
+        "anoLancamento": "1981",
+        "linkTrailer": "https://www.youtube.com/watch?v=XkkzKHCx154",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC3oWNeMaBqFHs7yRNjISOSQyvLEaHND40JA&s",
+        "categoria": "aventura",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "b8c9d0e1-f2a3-4567-8901-bcdef1234567",
+        "titulo": "De Volta para o Futuro",
+        "sinopse": "O adolescente Marty McFly é transportado para 1955 em uma máquina do tempo inventada por seu amigo, o cientista Doc Brown. Ele precisa fazer seus pais se apaixonarem para garantir sua própria existência.",
+        "anoLancamento": "1985",
+        "linkTrailer": "https://www.youtube.com/watch?v=qvsgGtivCgs",
+        "linkImagem": "https://br.web.img3.acsta.net/medias/nmedia/18/90/95/62/20122008.jpg",
+        "categoria": "aventura",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "c9d0e1f2-a3b4-5678-9012-cdef12345678",
+        "titulo": "Piratas do Caribe: A Maldição do Pérola Negra",
+        "sinopse": "O pirata Jack Sparrow tem seu navio roubado pelo Capitão Barbossa e sua tripulação. Para recuperá-lo, ele se une a Will Turner, um jovem ferreiro que busca resgatar seu amor, Elizabeth Swann, sequestrada pelos piratas.",
+        "anoLancamento": "2003",
+        "linkTrailer": "https://www.youtube.com/watch?v=naQr0uTrH_s",
+        "linkImagem": "https://upload.wikimedia.org/wikipedia/pt/thumb/e/e6/Pirates_of_the_Caribbean_-_The_Curse_of_the_Black_Pearl.jpg/250px-Pirates_of_the_Caribbean_-_The_Curse_of_the_Black_Pearl.jpg",
+        "categoria": "aventura",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "d0e1f2a3-b4c5-6789-0123-def123456789",
+        "titulo": "Jumanji: Bem-vindo à Selva",
+        "sinopse": "Quatro adolescentes encontram um antigo videogame e são transportados para o universo de Jumanji, onde se tornam os avatares que escolheram. Para voltar ao mundo real, eles precisam terminar o jogo.",
+        "anoLancamento": "2017",
+        "linkTrailer": "https://www.youtube.com/watch?v=2QKg5SZ_35I",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7zXU8lbCmO2vBMGDIZ1B4T1B49A5kx7iFuQ&s",
+        "categoria": "aventura",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "e1f2a3b4-c5d6-7890-1234-ef1234567890",
+        "titulo": "Pulp Fiction: Tempo de Violência",
+        "sinopse": "As vidas de dois assassinos, um gângster e sua esposa, e um boxeador em apuros se entrelaçam em quatro histórias de violência e redenção.",
+        "anoLancamento": "1994",
+        "linkTrailer": "https://www.youtube.com/watch?v=s7EdQ4FqbhY",
+        "linkImagem": "https://m.media-amazon.com/images/M/MV5BM2JiMDdlY2QtNjk2ZC00ZjhhLWE1ZjktMTYyODBmMWZiOGUzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "categoria": "comedia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "f2a3b4c5-d6e7-8901-2345-f12345678901",
+        "titulo": "Se Beber, Não Case!",
+        "sinopse": "Três padrinhos perdem o noivo durante sua festa de despedida de solteiro em Las Vegas. Eles precisam refazer seus passos para encontrá-lo a tempo do casamento.",
+        "anoLancamento": "2009",
+        "linkTrailer": "https://www.youtube.com/watch?v=jOQMBfWMMsU",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkWgi1HHB6kXlXByq7FmBmdfo-cGeUypxIww&s",
+        "categoria": "comedia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "a3b4c5d6-e7f8-9012-3456-123456789012",
+        "titulo": "Forrest Gump: O Contador de Histórias",
+        "sinopse": "A história dos Estados Unidos da década de 1950 à de 70 é contada sob a perspectiva de Forrest Gump, um homem com QI abaixo da média que, por acaso, esteve presente em alguns dos momentos mais importantes do período.",
+        "anoLancamento": "1994",
+        "linkTrailer": "https://www.youtube.com/watch?v=uPIEn0M8su0",
+        "linkImagem": "https://musicart.xboxlive.com/7/66045100-0000-0000-0000-000000000002/504/image.jpg",
+        "categoria": "comedia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "b4c5d6e7-f8a9-0123-4567-234567890123",
+        "titulo": "O Âncora: A Lenda de Ron Burgundy",
+        "sinopse": "Nos anos 70, um apresentador de telejornal machista de San Diego vê seu mundo virar de cabeça para baixo quando uma ambiciosa jornalista é contratada como sua co-apresentadora.",
+        "anoLancamento": "2004",
+        "linkTrailer": "https://www.youtube.com/watch?v=QvJ1K0_JzFI",
+        "linkImagem": "https://m.media-amazon.com/images/M/MV5BMDQ5Y2Q3YjktMjI2ZS00YjJkLWEyNGItY2M1MjdiZWU5NmU4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+        "categoria": "comedia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "c5d6e7f8-a9b0-1234-5678-345678901234",
+        "titulo": "As Branquelas",
+        "sinopse": "Dois agentes do FBI se disfarçam de socialites brancas para investigar uma série de sequestros. Eles precisam manter seus disfarces enquanto tentam resolver o caso.",
+        "anoLancamento": "2004",
+        "linkTrailer": "https://www.youtube.com/watch?v=seoJIPLLWp0",
+        "linkImagem": "https://br.web.img3.acsta.net/medias/nmedia/18/97/52/82/20534159.jpg",
+        "categoria": "comedia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "d6e7f8a9-b0c1-2345-6789-456789012345",
+        "titulo": "Um Sonho de Liberdade",
+        "sinopse": "Dois homens presos se unem ao longo de vários anos, encontrando consolo e eventual redenção através de atos de decência comum.",
+        "anoLancamento": "1994",
+        "linkTrailer": "https://www.youtube.com/watch?v=6hB3S9bIaco",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcWqffuBbxqe1b6J4R54fkxe0fFkct9ThViQ&s",
+        "categoria": "drama",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "e7f8a9b0-c1d2-3456-7890-567890123456",
+        "titulo": "A Lista de Schindler",
+        "sinopse": "Na Polônia ocupada pelos alemães durante a Segunda Guerra Mundial, o industrial Oskar Schindler gradualmente se preocupa com sua força de trabalho judia depois de testemunhar sua perseguição pelos nazistas.",
+        "anoLancamento": "1993",
+        "linkTrailer": "https://www.youtube.com/watch?v=gG22XNhtnoY",
+        "linkImagem": "https://br.web.img2.acsta.net/pictures/19/04/10/19/44/2904073.jpg",
+        "categoria": "drama",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "f8a9b0c1-d2e3-4567-8901-678901234567",
+        "titulo": "Clube da Luta",
+        "sinopse": "Um trabalhador de escritório com insônia, procurando uma maneira de mudar sua vida, cruza o caminho com um fabricante de sabão diabólico e eles formam um clube de luta clandestino que evolui para algo muito, muito maior.",
+        "anoLancamento": "1999",
+        "linkTrailer": "https://www.youtube.com/watch?v=SUXWAEX2jlg",
+        "linkImagem": "https://br.web.img3.acsta.net/medias/nmedia/18/90/95/96/20122166.jpg",
+        "categoria": "drama",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "a9b0c1d2-e3f4-5678-9012-789012345678",
+        "titulo": "O Resgate do Soldado Ryan",
+        "sinopse": "Após o desembarque na Normandia, um grupo de soldados americanos vai para trás das linhas inimigas para resgatar um paraquedista cujos três irmãos foram mortos em combate.",
+        "anoLancamento": "1998",
+        "linkTrailer": "https://www.youtube.com/watch?v=WdHJ_nLRjIA",
+        "linkImagem": "https://upload.wikimedia.org/wikipedia/pt/a/ac/Saving_Private_Ryan_poster.jpg",
+        "categoria": "drama",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "b0c1d2e3-f4a5-6789-0123-890123456789",
+        "titulo": "Parasita",
+        "sinopse": "Ganância e discriminação de classe ameaçam o relacionamento simbiótico recém-formado entre a rica família Park e os pobres parentes Kim.",
+        "anoLancamento": "2019",
+        "linkTrailer": "https://www.youtube.com/watch?v=5xH0HfJHsaY",
+        "linkImagem": "https://br.web.img2.acsta.net/pictures/19/10/04/19/58/1046648.jpg",
+        "categoria": "drama",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "c1d2e3f4-a5b6-7890-1234-901234567890",
+        "titulo": "O Exorcista",
+        "sinopse": "Quando uma adolescente é possuída por uma entidade misteriosa, sua mãe busca a ajuda de dois padres para salvá-la.",
+        "anoLancamento": "1973",
+        "linkTrailer": "https://www.youtube.com/watch?v=YDGw1MTEe9k",
+        "linkImagem": "https://ingresso-a.akamaihd.net/img/cinema/cartaz/2353-cartaz.jpg",
+        "categoria": "terror",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "d2e3f4a5-b6c7-8901-2345-012345678901",
+        "titulo": "Hereditário",
+        "sinopse": "Após a morte da reclusa avó, a família Graham começa a desvendar segredos cada vez mais aterrorizantes sobre sua ancestralidade.",
+        "anoLancamento": "2018",
+        "linkTrailer": "https://www.youtube.com/watch?v=V6wWKNij_1M",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSjw7PiW7mPQoRWm4yRUbo2IJL-QykqyVh0Q&s",
+        "categoria": "terror",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "e3f4a5b6-c7d8-9012-3456-123456789012",
+        "titulo": "Corra!",
+        "sinopse": "Um jovem fotógrafo negro descobre um segredo sombrio quando conhece os pais aparentemente liberais de sua namorada branca.",
+        "anoLancamento": "2017",
+        "linkTrailer": "https://www.youtube.com/watch?v=DzfpyUB60YY",
+        "linkImagem": "https://br.web.img3.acsta.net/pictures/17/04/19/21/08/577190.jpg",
+        "categoria": "terror",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "f4a5b6c7-d8e9-0123-4567-234567890123",
+        "titulo": "Invocação do Mal",
+        "sinopse": "Os investigadores paranormais Ed e Lorraine Warren trabalham para ajudar uma família aterrorizada por uma presença sombria em sua fazenda.",
+        "anoLancamento": "2013",
+        "linkTrailer": "https://www.youtube.com/watch?v=k10ETZ41q5o",
+        "linkImagem": "https://br.web.img2.acsta.net/pictures/210/166/21016629_2013062820083878.jpg",
+        "categoria": "terror",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "a5b6c7d8-e9f0-1234-5678-345678901234",
+        "titulo": "A Bruxa",
+        "sinopse": "Uma família na Nova Inglaterra da década de 1630 é dilacerada por forças da bruxaria, magia negra e possessão.",
+        "anoLancamento": "2015",
+        "linkTrailer": "https://www.youtube.com/watch?v=iQXmlf3Sefg",
+        "linkImagem": "https://br.web.img3.acsta.net/pictures/16/02/02/11/51/346769.jpg",
+        "categoria": "terror",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "b6c7d8e9-f0a1-2345-6789-456789012345",
+        "titulo": "O Silêncio dos Inocentes",
+        "sinopse": "Uma jovem estagiária do FBI deve receber a ajuda de um assassino canibal manipulador e preso para ajudar a capturar outro assassino em série.",
+        "anoLancamento": "1991",
+        "linkTrailer": "https://www.youtube.com/watch?v=W6Mm8Sbe__o",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvn_etn7rqDp2pOzLLs_K1kQD0aRhEPeqIWQ&s",
+        "categoria": "suspense",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "c7d8e9f0-a1b2-3456-7890-567890123456",
+        "titulo": "Seven: Os Sete Crimes Capitais",
+        "sinopse": "Dois detetives, um novato e um prestes a se aposentar, caçam um assassino em série que usa os sete pecados capitais como seus motivos.",
+        "anoLancamento": "1995",
+        "linkTrailer": "https://www.youtube.com/watch?v=znmZoVkCjpI",
+        "linkImagem": "https://br.web.img3.acsta.net/pictures/210/124/21012465_2013061319170245.jpg",
+        "categoria": "suspense",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "d8e9f0a1-b2c3-4567-8901-678901234567",
+        "titulo": "Garota Exemplar",
+        "sinopse": "Com o desaparecimento de sua esposa se tornando o foco de um intenso frenesi da mídia, um homem se vê o principal suspeito em sua própria investigação.",
+        "anoLancamento": "2014",
+        "linkTrailer": "https://www.youtube.com/watch?v=2-_-1nJf8Vg",
+        "linkImagem": "https://br.web.img3.acsta.net/pictures/14/08/20/21/11/442051.jpg",
+        "categoria": "suspense",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "e9f0a1b2-c3d4-5678-9012-789012345678",
+        "titulo": "A Origem",
+        "sinopse": "Um ladrão que rouba segredos corporativos através do uso da tecnologia de compartilhamento de sonhos recebe a tarefa inversa de plantar uma ideia na mente de um CEO.",
+        "anoLancamento": "2010",
+        "linkTrailer": "https://www.youtube.com/watch?v=YoHD9XEInc0",
+        "linkImagem": "https://upload.wikimedia.org/wikipedia/pt/8/84/AOrigemPoster.jpg",
+        "categoria": "suspense",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "f0a1b2c3-d4e5-6789-0123-890123456789",
+        "titulo": "Cisne Negro",
+        "sinopse": "Uma bailarina comprometida ganha o papel principal em uma produção de 'O Lago dos Cisnes' apenas para se ver mergulhando na escuridão ao explorar o lado sombrio de sua personagem.",
+        "anoLancamento": "2010",
+        "linkTrailer": "https://www.youtube.com/watch?v=5jaI1XOB-bs",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTufmuAV6VxLdR-M5Ru6ro0qC2u1kEN_vhk5A&s",
+        "categoria": "suspense",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "a1b2c3d4-e5f6-7890-1234-90123456789a",
+        "titulo": "Blade Runner 2049",
+        "sinopse": "Um jovem Blade Runner descobre um segredo há muito enterrado que o leva a procurar o ex-Blade Runner Rick Deckard, que está desaparecido há trinta anos.",
+        "anoLancamento": "2017",
+        "linkTrailer": "https://www.youtube.com/watch?v=gCcx85zbxz4",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ6E2u22eP9cH0LR-9OxuJ1Mq42Rz1Tf1sXg&s",
+        "categoria": "ficcao-cientifica",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "b2c3d4e5-f6a7-8901-2345-0123456789ab",
+        "titulo": "Matrix",
+        "sinopse": "Um hacker descobre a verdade chocante sobre sua realidade e seu papel na guerra contra seus controladores.",
+        "anoLancamento": "1999",
+        "linkTrailer": "https://www.youtube.com/watch?v=vKQi3bBA1y8",
+        "linkImagem": "https://br.web.img2.acsta.net/medias/nmedia/18/91/08/82/20128877.JPG",
+        "categoria": "ficcao-cientifica",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "c3d4e5f6-a7b8-9012-3456-1234567890ab",
+        "titulo": "Interestelar",
+        "sinopse": "Uma equipe de exploradores viaja através de um buraco de minhoca no espaço em uma tentativa de garantir a sobrevivência da humanidade.",
+        "anoLancamento": "2014",
+        "linkTrailer": "https://www.youtube.com/watch?v=zSWdZVtXT7E",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR44Mss2lzEnTxXHG_sPNIwtCMUcnnkE8V78w&s",
+        "categoria": "ficcao-cientifica",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "d4e5f6a7-b8c9-0123-4567-234567890abc",
+        "titulo": "Duna",
+        "sinopse": "A jornada de um herói mítico e emocionalmente carregado, 'Duna' conta a história de Paul Atreides, um jovem brilhante e talentoso nascido para um grande destino além de sua compreensão, que deve viajar para o planeta mais perigoso do universo para garantir o futuro de sua família e seu povo.",
+        "anoLancamento": "2021",
+        "linkTrailer": "https://www.youtube.com/watch?v=8g18jFHCLXk",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnPpGarxn1pkROYMIhQ1estsapvcOSsfhfCA&s",
+        "categoria": "ficcao-cientifica",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "e5f6a7b8-c9d0-1234-5678-34567890abcd",
+        "titulo": "O Exterminador do Futuro 2: O Julgamento Final",
+        "sinopse": "Um ciborgue, idêntico ao que falhou em matar Sarah Connor, deve agora proteger seu filho adolescente, John Connor, de um ciborgue mais avançado e poderoso.",
+        "anoLancamento": "1991",
+        "linkTrailer": "https://www.youtube.com/watch?v=0yfpLhW-Xyg",
+        "linkImagem": "https://br.web.img2.acsta.net/medias/nmedia/18/92/91/08/20224693.jpg",
+        "categoria": "ficcao-cientifica",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "f6a7b8c9-d0e1-2345-6789-4567890abcde",
+        "titulo": "Titanic",
+        "sinopse": "Um romance entre um artista pobre e uma jovem rica a bordo do luxuoso e malfadado R.M.S. Titanic.",
+        "anoLancamento": "1997",
+        "linkTrailer": "https://www.youtube.com/watch?v=kVrqfYjkTdQ",
+        "linkImagem": "https://upload.wikimedia.org/wikipedia/pt/2/22/Titanic_poster.jpg",
+        "categoria": "romance",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "a7b8c9d0-e1f2-3456-7890-567890abcdef",
+        "titulo": "Diário de uma Paixão",
+        "sinopse": "Um jovem pobre, mas apaixonado, se apaixona por uma jovem rica, dando-lhe uma sensação de liberdade, mas eles logo são separados devido às suas diferenças sociais.",
+        "anoLancamento": "2004",
+        "linkTrailer": "https://www.youtube.com/watch?v=DyfWPxB1pZM",
+        "linkImagem": "https://br.web.img3.acsta.net/medias/nmedia/18/91/21/92/20135014.jpg",
+        "categoria": "romance",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "b8c9d0e1-f2a3-4567-8901-67890abcdef1",
+        "titulo": "Orgulho e Preconceito",
+        "sinopse": "Elizabeth Bennet, uma das cinco filhas de um cavalheiro rural, lida com questões de casamento, moralidade e equívocos na sociedade da Regência Britânica.",
+        "anoLancamento": "2005",
+        "linkTrailer": "https://www.youtube.com/watch?v=Ur_DIHs92NM",
+        "linkImagem": "https://br.web.img3.acsta.net/c_310_420/medias/nmedia/18/87/84/14/20028635.jpg",
+        "categoria": "romance",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "c9d0e1f2-a3b4-5678-9012-7890abcdef12",
+        "titulo": "La La Land: Cantando Estações",
+        "sinopse": "Enquanto perseguem seus sonhos em Los Angeles, um pianista de jazz e uma aspirante a atriz se apaixonam, mas descobrem que o sucesso pode separá-los.",
+        "anoLancamento": "2016",
+        "linkTrailer": "https://www.youtube.com/watch?v=0pdqf4P9MB8",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSijb630kMbsIXXalvgZQYjP1MFGyxbfzvY1g&s",
+        "categoria": "romance",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "d0e1f2a3-b4c5-6789-0123-890abcdef123",
+        "titulo": "Questão de Tempo",
+        "sinopse": "Aos 21 anos, Tim descobre que pode viajar no tempo e mudar o que acontece e aconteceu em sua própria vida. Sua decisão de tornar seu mundo um lugar melhor, conseguindo uma namorada, acaba não sendo tão fácil quanto ele pensa.",
+        "anoLancamento": "2013",
+        "linkTrailer": "https://www.youtube.com/watch?v=-0gX9g4Lxm8",
+        "linkImagem": "https://br.web.img3.acsta.net/pictures/210/530/21053062_20131025204305591.jpg",
+        "categoria": "romance",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "e1f2a3b4-c5d6-7890-1234-90abcdef1234",
+        "titulo": "O Labirinto do Fauno",
+        "sinopse": "Na Espanha fascista de 1944, a jovem enteada de um sádico oficial do exército escapa para um mundo de fantasia misterioso, mas cativante.",
+        "anoLancamento": "2006",
+        "linkTrailer": "https://www.youtube.com/watch?v=jVZRnnVSQ8k",
+        "linkImagem": "https://br.web.img2.acsta.net/medias/nmedia/18/87/14/49/19872468.jpg",
+        "categoria": "fantasia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "f2a3b4c5-d6e7-8901-2345-0abcdef12345",
+        "titulo": "O Senhor dos Anéis: O Retorno do Rei",
+        "sinopse": "Gandalf e Aragorn lideram o Mundo dos Homens contra o exército de Sauron para desviar seu olhar de Frodo e Sam, que se aproximam da Montanha da Perdição com o Um Anel.",
+        "anoLancamento": "2003",
+        "linkTrailer": "https://www.youtube.com/watch?v=r5X-hFf6Bwo",
+        "linkImagem": "https://upload.wikimedia.org/wikipedia/pt/0/0d/EsdlaIII.jpg",
+        "categoria": "fantasia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "a3b4c5d6-e7f8-9012-3456-abcdef123456",
+        "titulo": "A Forma da Água",
+        "sinopse": "Em um laboratório de alta segurança durante a Guerra Fria, uma faxineira solitária forma um relacionamento único com uma criatura anfíbia que está sendo mantida em cativeiro.",
+        "anoLancamento": "2017",
+        "linkTrailer": "https://www.youtube.com/watch?v=XFYWazblaUA",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAGwBofWw4QIpXVvBmA6HSTK7CEgBvglHmbQ&s",
+        "categoria": "fantasia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "b4c5d6e7-f8a9-0123-4567-bcdef1234567",
+        "titulo": "Harry Potter e o Prisioneiro de Azkaban",
+        "sinopse": "No terceiro ano na Escola de Magia e Bruxaria de Hogwarts, Harry Potter, Rony e Hermione conhecem Sirius Black, um prisioneiro que fugiu de Azkaban, e descobrem a verdade sobre o passado de Harry.",
+        "anoLancamento": "2004",
+        "linkTrailer": "https://www.youtube.com/watch?v=1ZdlAg3j8nI",
+        "linkImagem": "https://m.media-amazon.com/images/I/81u+ljPVifL.jpg",
+        "categoria": "fantasia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "c5d6e7f8-a9b0-1234-5678-cdef12345678",
+        "titulo": "Edward Mãos de Tesoura",
+        "sinopse": "Um homem artificial, que foi construído incompleto e tem lâminas de tesoura no lugar das mãos, é acolhido por uma família suburbana e se apaixona pela filha adolescente.",
+        "anoLancamento": "1990",
+        "linkTrailer": "https://www.youtube.com/watch?v=Ej4sUaBQPGk",
+        "linkImagem": "https://http2.mlstatic.com/D_NQ_NP_956392-MLA82578265462_032025-OO.jpg",
+        "categoria": "fantasia",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "d6e7f8a9-b0c1-2345-6789-def123456789",
+        "titulo": "A Viagem de Chihiro",
+        "sinopse": "Durante a mudança de sua família para o subúrbio, uma menina de 10 anos vagueia por um mundo governado por deuses, bruxas e espíritos, e onde os humanos são transformados em bestas.",
+        "anoLancamento": "2001",
+        "linkTrailer": "https://www.youtube.com/watch?v=ByXuk9QqQkk",
+        "linkImagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmN3lyTVO3DNSFeDmdqJfdrHyhozQKbaYDAg&s",
+        "categoria": "anime",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "e7f8a9b0-c1d2-3456-7890-ef1234567890",
+        "titulo": "Akira",
+        "sinopse": "O líder de uma gangue de motoqueiros tenta salvar seu amigo de infância, que foi submetido a um experimento científico secreto que despertou poderes telecinéticos perigosos.",
+        "anoLancamento": "1988",
+        "linkTrailer": "https://www.youtube.com/watch?v=nA8KmHC2Z-g",
+        "linkImagem": "https://m.media-amazon.com/images/I/71SKqtvjBAL._UF1000,1000_QL80_.jpg",
+        "categoria": "anime",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "f8a9b0c1-d2e3-4567-8901-f12345678901",
+        "titulo": "Your Name.",
+        "sinopse": "Dois estranhos se encontram misteriosamente ligados por um fenômeno estranho. Eles começam a trocar de corpos aleatoriamente e precisam encontrar uma maneira de se encontrar.",
+        "anoLancamento": "2016",
+        "linkTrailer": "https://www.youtube.com/watch?v=xU47nhruN-Q",
+        "linkImagem": "https://m.media-amazon.com/images/S/pv-target-images/03a7f194edd0c32d7e72b0f87e2f96319246b63650aaf091fce661cd654e24ae.jpg",
+        "categoria": "anime",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "a9b0c1d2-e3f4-5678-9012-123456789012",
+        "titulo": "Princesa Mononoke",
+        "sinopse": "Em uma jornada para encontrar a cura para uma maldição Tatarigami, Ashitaka se encontra no meio de uma guerra entre os deuses da floresta e Tatara, uma colônia de mineração. Nesta busca, ele também conhece San, a Princesa Mononoke.",
+        "anoLancamento": "1997",
+        "linkTrailer": "https://www.youtube.com/watch?v=4OiMOHRDs14",
+        "linkImagem": "https://m.media-amazon.com/images/I/81jSJRqb9IL.jpg",
+        "categoria": "anime",
+        "tipoDocumento": "filme"
+    },
+    {
+        "_id": "b0c1d2e3-f4a5-6789-0123-234567890123",
+        "titulo": "Ghost in the Shell",
+        "sinopse": "Uma ciborgue policial e sua parceira caçam um hacker misterioso e poderoso chamado de 'Mestre dos Fantoches'.",
+        "anoLancamento": "1995",
+        "linkTrailer": "https://www.youtube.com/watch?v=8RF09G8Ymqg",
+        "linkImagem": "https://m.media-amazon.com/images/I/71XbkLbwqZL._UF894,1000_QL80_.jpg",
+        "categoria": "anime",
+        "tipoDocumento": "filme"
+    }
+]

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <title>Moviefy Filmes</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
@@ -34,7 +34,8 @@
                                 <a href="#" value="suspense"
                                     class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Suspense</a>
                                 <a href="#" value="ficcao-cientifica"
-                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Ficção Científica</a>
+                                    class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Ficção
+                                    Científica</a>
                                 <a href="#" value="romance"
                                     class="navCategorias hover:bg-amber-600 px-3 py-2 rounded-md text-sm font-bold transition">Romance</a>
                                 <a href="#" value="fantasia"
@@ -62,7 +63,7 @@
             <div id="navMenu" class="xl:hidden hidden bg-amber-500 px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#" value="acao"
                     class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Ação</a>
-                <a href="#" valeu="aventura"
+                <a href="#" value="aventura"
                     class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Aventura</a>
                 <a href="#" value="comedia"
                     class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Comédia</a>
@@ -73,7 +74,8 @@
                 <a href="#" value="suspense"
                     class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Suspense</a>
                 <a href="#" value="ficcao-cientifica"
-                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Ficção Científica</a>
+                    class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Ficção
+                    Científica</a>
                 <a href="#" value="romance"
                     class="navCategorias hover:bg-amber-600 block px-3 py-2 rounded-md text-base font-bold text-black transition">Romance</a>
                 <a href="#" value="fantasia"
@@ -88,12 +90,21 @@
     <main class="pt-20 p-4 bg-black min-h-screen">
 
         <section id="filmeDestaqueSecao" class="bg-black w-full p-2 h-1/2"></section>
-        
+
         <section id="filmesSecao" class="bg-black w-full p-4 h-1/2">
             <h2 id="listaFilmeTitulo" class="text-xl font-bold text-white mb-4">Outros filmes para você</h2>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4" id="filmesLista"></div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4 hover"
+                id="filmesLista"></div>
         </section>
-        
+
+        <div id="movieModal"
+            class="hidden fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 p-4 transition-opacity duration-300">
+
+            <div id="modalContent"
+                class="bg-stone-900 rounded-lg shadow-xl w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row relative">
+
+            </div>
+        </div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"></script>

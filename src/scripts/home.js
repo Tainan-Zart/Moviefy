@@ -4,12 +4,6 @@ document.getElementById('navBotao').addEventListener('click', () => {
     navMenu.classList.toggle('hidden');
 });
 
-// document.getElementById('fecharModal').addEventListener('click', () => {
-//     const modal = document.getElementById('modal');
-//     modal.classList.add('hidden');
-//     document.getElementById('modalTrailer').src = '';
-// });
-
 document.querySelectorAll('.navCategorias').forEach(item => {
     item.addEventListener('click', async (event) => {
         const categoria = event.target.getAttribute('value');
@@ -20,7 +14,15 @@ document.querySelectorAll('.navCategorias').forEach(item => {
 
 document.querySelector('#navLogo').addEventListener('click', async () => {
     await carregarFilmes();
+    navMenu.classList.add('hidden');
 });
+
+function extrairVideoIdDoYoutube(url) {
+    if (!url) return null;
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+}
 
 async function carregarFilmeDestaque(categoria = null) {
     try {
@@ -40,27 +42,39 @@ async function carregarFilmeDestaque(categoria = null) {
         const filmeDestaqueElemento = document.createElement('div');
         filmeDestaqueElemento.classList.add('flex', 'w-full', 'h-full', 'flex-col', 'md:flex-row');
 
-       filmeDestaqueElemento.innerHTML = `
-            <div class="hidden md:block md:w-1/2 w-full text-white p-4 flex flex-col justify-center overflow-hidden rounded-xs">
-                <h2 class="text-3xl text-center font-bold mb-4">${filme.titulo}</h2>
-                <p class="text-sm break-words word-wrap">${filme.sinopse}</p>
+        const videoId = extrairVideoIdDoYoutube(filme.linkTrailer);
+        const linkTrailerYoutube = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&rel=0`;
+
+        filmeDestaqueElemento.innerHTML = `
+            <div class="hidden md:block md:w-1/2 w-full h-full text-white p-2 lg:p-4 flex flex-col justify-center">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4">${filme.titulo}</h2>
+                <div class="flex items-center space-x-4 mb-6 text-base text-neutral-300">
+                    <span class="font-semibold">${filme.anoLancamento}</span>
+                    <span class="border-l border-neutral-500 h-4"></span>
+                    <span class="font-medium bg-white/10 px-2 py-0.5 rounded-md text-sm">${filme.categoria}</span>
+                </div>
+                <p class="text-neutral-200 leading-relaxed text-base line-clamp-4 lg:line-clamp-5">${filme.sinopse}</p>
             </div>
 
-            <div class="h-full w-full md:w-1/2 flex flex-col justify-center rounded-xs overflow-hidden" style="box-shadow: 0 0 80px rgba(255, 255, 255, 0.3);">
-                <img id="imagemDestaque"
-                    src="${filme.imagem}"
-                    alt="Imagem do filme"
-                    class="w-full max-h-[80vh] aspect-3/2"/>
+            <div class="h-full w-full md:w-1/2 flex flex-col justify-center rounded-xs overflow-hidden"">
+                <iframe 
+                    class="w-full h-full aspect-video" 
+                    src="${linkTrailerYoutube}" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+                </iframe>
             </div>
         `;
 
         filmeDestaque.appendChild(filmeDestaqueElemento);
 
         return filme;
+
     } catch (err) {
         console.error('Erro ao carregar filme destaque:', err);
     }
-}
+ }
 
 async function carregarFilmes(categoria = null) {
     try {
@@ -79,14 +93,15 @@ async function carregarFilmes(categoria = null) {
             document.querySelector('#listaFilmeTitulo').innerHTML = '';
             
         filmesFiltrados.forEach(filme => {
+
             document.querySelector('#listaFilmeTitulo').innerHTML = 'Outros filmes para você';
 
             const filmeElemento = document.createElement('div');
 
-            filmeElemento.classList.add('bg-stone-700', 'overflow-hidden', 'shadow-md', 'aspect-square', 'w-full', 'rounded-sm');
+            filmeElemento.classList.add('bg-stone-700', 'aspect-[2/3]', 'w-full', 'rounded-sm', 'overflow-hidden');
 
             filmeElemento.innerHTML = `
-                 <img src="${filme.imagem}" alt="Imagem do filme" class="w-full max-h-[80vh] aspect-3/3">
+                 <img src="${filme.linkImagem}" alt="Imagem do filme" class="w-full h-full object-cover">
             `;
 
             filmeElemento.addEventListener('click', () => abrirModal(filme));
@@ -99,19 +114,55 @@ async function carregarFilmes(categoria = null) {
 }
 
 function abrirModal(filme) {
-    const modal = document.getElementById('modal');
-    const modalTitulo = document.getElementById('modalTitulo');
-    const modalDescricao = document.getElementById('modalDescricao');
-    const modalGenero = document.getElementById('modalGenero');
-    const modalTrailer = document.getElementById('modalTrailer');
+    const modal = document.querySelector('#movieModal');
+    const modalContent = document.querySelector('#modalContent');
 
-    modalTitulo.textContent = filme.titulo;
-    modalDescricao.textContent = filme.sinopse;
-    modalGenero.textContent = filme.categoria;
-    modalTrailer.src = filme.linkTrailer;
+    modalContent.innerHTML = '';
 
+    const videoId = extrairVideoIdDoYoutube(filme.linkTrailer);
+    
+    const linkTrailerYoutube = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&rel=0`;
+
+    const modalHTML = `
+        <button onclick="fecharModal()" class="absolute top-2 right-4 text-white text-4xl font-bold hover:text-gray-300 z-20">×</button>
+
+        <div class="w-full md:w-1/2 flex flex-col justify-center p-6 text-white overflow-y-auto max-h-[50vh] md:max-h-full">
+            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">${filme.titulo}</h2>
+            <div class="flex items-center space-x-4 mb-5 text-sm text-neutral-300">
+                <span class="font-semibold">${filme.anoLancamento}</span>
+                <span class="border-l border-neutral-500 h-4"></span>
+                <span class="font-medium bg-white/10 px-2 py-0.5 rounded-md">${filme.categoria}</span>
+            </div>
+            <p class="text-neutral-200 leading-relaxed text-base">${filme.sinopse}</p>
+        </div>
+
+        <div class="w-full md:w-1/2 bg-black flex items-center">
+             <iframe 
+                id="modalTrailer"
+                class="w-full aspect-video" 
+                src="${videoId ? linkTrailerYoutube : ''}" 
+                frameborder="0" 
+                allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    `;
+
+    modalContent.innerHTML = modalHTML;
     modal.classList.remove('hidden');
 }
+
+function fecharModal() {
+    
+    const modal = document.querySelector('#movieModal');
+
+    const modalTrailer = document.querySelector('#modalTrailer');
+
+    modal.classList.add('hidden');
+
+    if (modalTrailer) 
+        modalTrailer.src = ''; 
+};
 
 carregarFilmes();
 

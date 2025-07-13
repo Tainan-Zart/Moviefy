@@ -49,13 +49,20 @@ document.getElementById('navMenuFilme').addEventListener('click', () => {
 });
 
 
+function gerarGuid(){
+    return crypto.randomUUID();
+} 
+
 //#region Usuario
+
+let usuarioEdicaoId = null;
 
 document.getElementById('botaoAbrirUsuarioModal').addEventListener('click', () => {
     carregarModalCriar();
 });
 
 document.getElementById('botaoFecharUsuarioModal').addEventListener('click', () => {
+    usuarioEdicaoId = null;
     abrirFecharUsuarioModal();
 });
 
@@ -64,19 +71,33 @@ document.getElementById('usuarioForm').addEventListener('submit', async (e) => {
     await salvarEditarUsuario();  
 });
 
-let usuarioEdicaoId = null;
 
 async function salvarEditarUsuario() {
     
+    const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
-    const senha = document.getElementById('senha').value;
     const tipo = document.getElementById('tipoUsuario').value;
-    
+    const senha = document.getElementById('senha').value;
+    const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+    if (senha !== confirmarSenha) {
+        alert('As senhas não conferem');
+        return;
+    }
+
+    const usuario = {
+        nome: nome,
+        email: email,
+        senha: senha,
+        tipo: tipo,
+        tipoDocumento: 'usuario'
+    }
+
     try {
         if (usuarioEdicaoId) {
-            await atualizarUsuario(email, senha, tipo);
+            await atualizarUsuario(usuario);
         } else {
-            await cadastrarUsuario(email, senha, tipo);
+            await cadastrarUsuario(usuario);
         }
 
         abrirFecharUsuarioModal();
@@ -101,8 +122,8 @@ async function carregarUsuarios() {
             usuarioElemento.classList.add('flex', 'justify-between', 'items-center', 'p-3', 'bg-stone-500', 'hover:bg-amber-500', 'mb-2', 'rounded-md');
 
             usuarioElemento.innerHTML = `
-                <span class="text-black">${usuario.email} - ${usuario.tipo}</span>
-                <div class="space-x-12 flex items-center">
+                <span class="flex-1 min-w-0 break-words mr-4 text-black">${usuario.nome} - ${usuario.tipo}</span>
+                <div class="flex-none space-x-8 md:space-x-10 lg:space-x-12 flex items-center">
                     <button id="botaoEditar"><img src="../assets/lapis.png" alt="imagem de lapis" class="h-6 w-6"></button>
                     <button id="botaoDeletar"><img src="../assets/lixeira.png" alt="imagem de lapis" class="h-6 w-6"></button>
                 </div>
@@ -111,7 +132,7 @@ async function carregarUsuarios() {
             listaUsuario.appendChild(usuarioElemento);
 
             usuarioElemento.querySelector('#botaoEditar').addEventListener('click', () => carregarModalEditar(usuario));
-            usuarioElemento.querySelector('#botaoDeletar').addEventListener('click', async () => excluirUsuario(usuario.email));
+            usuarioElemento.querySelector('#botaoDeletar').addEventListener('click', async () => excluirUsuario(usuario._id));
         });
     } catch (err) {
         alert(err);
@@ -120,8 +141,10 @@ async function carregarUsuarios() {
 
 function carregarModalCriar(){
     document.getElementById('modalTitle').textContent = "Cadastrar Usuário";
+    document.getElementById('nome').value = '';
     document.getElementById('email').value = '';
     document.getElementById('senha').value = '';
+    document.getElementById('confirmarSenha').value = '';
     document.getElementById('tipoUsuario').value = '';
     abrirFecharUsuarioModal();
 }
@@ -129,8 +152,10 @@ function carregarModalCriar(){
 function carregarModalEditar(usuario) {
     usuarioEdicaoId = usuario._id;
     document.getElementById('modalTitle').textContent = "Editar Usuário";
+    document.getElementById('nome').value = usuario.nome;
     document.getElementById('email').value = usuario.email;
     document.getElementById('senha').value = usuario.senha;
+    document.getElementById('confirmarSenha').value = usuario.senha;
     document.getElementById('tipoUsuario').value = usuario.tipo;
     abrirFecharUsuarioModal();
 }
@@ -139,30 +164,28 @@ function abrirFecharUsuarioModal() {
     usuarioModal.classList.toggle('hidden');
 }
 
-async function cadastrarUsuario(email, senha, tipo) {
+async function cadastrarUsuario(usuario) {
 
-    const retorno = await buscarUsuarioPorEmailAsync(email);
+    const retorno = await buscarUsuarioPorEmailAsync(usuario.email);
 
-    if (retorno == null)
-        await salvarUsuarioAsync(email, senha, tipo);
+    if (!retorno){
+        const usuarioId = gerarGuid();
+        usuario._id = usuarioId;
+        await salvarUsuarioAsync(usuario);
+    }
     else   
-        alert("Usuário já cadastrado");
+        alert(`Usuário com email: ${usuario.email} já cadastrado`);
 }
 
-async function atualizarUsuario(email, senha, tipo) {
+async function atualizarUsuario(usuario) {
 
-    var email = document.getElementById('email').value;
-
-    if(email == usuarioEdicaoId)
-       await editarUsuarioAsync(email, senha, tipo); 
-    else
-        alert('Não é possivel atualizar o email');
+    await editarUsuarioAsync(usuarioEdicaoId, usuario); 
 
     usuarioEdicaoId == null;
 }
 
-async function excluirUsuario(email){
-    await excluirUsuarioAsync(email);
+async function excluirUsuario(id){
+    await excluirUsuarioAsync(id);
     await carregarUsuarios();
 }
 
@@ -177,6 +200,7 @@ document.getElementById('botaoAbrirFilmeModal').addEventListener('click', () => 
 });
 
 document.getElementById('botaoFecharFilmeModal').addEventListener('click', () => {
+    filmeEdicaoId = null;
     abrirFecharFilmeModal();
 });
 
@@ -186,32 +210,28 @@ document.getElementById('filmeForm').addEventListener('submit', async (e) => {
 });
 
 async function carregarFilmes() {
-
     listaFilme.innerHTML = '';
 
     try {
         const resultado = await db.allDocs({ include_docs: true });
-
         const filmes = resultado.rows.filter(row => row.doc.tipoDocumento === 'filme').map(row => row.doc);
 
         filmes.forEach((filme) => {
-
             const filmeElemento = document.createElement('div');
-
             filmeElemento.classList.add('flex', 'justify-between', 'items-center', 'p-3', 'bg-stone-500', 'hover:bg-amber-500', 'mb-2', 'rounded-md');
 
             filmeElemento.innerHTML = `
-                <span class="text-black">${filme.titulo} - ${filme.categoria}</span>
-                <div class="space-x-12 flex items-center">
+                <span class="flex-1 min-w-0 break-words mr-4 text-black">${filme.titulo} - ${filme.categoria}</span>
+                <div class="flex-none space-x-6 md:space-x-10 lg:space-x-12 flex items-center">
                     <button id="botaoEditarFilme"><img src="../assets/lapis.png" alt="imagem de lapis" class="h-6 w-6"></button>
-                    <button id="botaoDeletarFilme"><img src="../assets/lixeira.png" alt="imagem de lapis" class="6 w-6"></button>
+                    <button id="botaoDeletarFilme"><img src="../assets/lixeira.png" alt="imagem de lixeira" class="h-6 w-6"></button>
                 </div>
             `;
 
             listaFilme.appendChild(filmeElemento);
 
             filmeElemento.querySelector('#botaoEditarFilme').addEventListener('click', () => carregarModalEditarFilme(filme));
-            filmeElemento.querySelector('#botaoDeletarFilme').addEventListener('click', async () => excluirFilme(filme.titulo));
+            filmeElemento.querySelector('#botaoDeletarFilme').addEventListener('click', async () => excluirFilme(filme._id)); // Dica: É mais seguro excluir pelo _id
         });
     } catch (err) {
         alert(err);
@@ -220,27 +240,28 @@ async function carregarFilmes() {
 
 async function salvarEditarFilme() {
 
-    const titulo = document.getElementById('tituloFilme').value.trim();
+    const titulo = document.getElementById('tituloFilme').value;
     const sinopse = document.getElementById('sinopseFilme').value;
+    const anoLancamento = document.getElementById('anoLancamentoFilme').value;
     const linkTrailer = document.getElementById('linkTrailerFilme').value;
-    const imagem = document.getElementById('imagemFilme').value;
+    const linkImagem = document.getElementById('linkImagemFilme').value;
     const categoria = document.getElementById('categoriaFilme').value;
 
 
     const filme = {
-        _id: titulo,
         titulo: titulo,
         sinopse: sinopse,
+        anoLancamento : anoLancamento,
         linkTrailer: linkTrailer,
-        imagem: imagem,
+        linkImagem: linkImagem,
         categoria: categoria,
         tipoDocumento: 'filme'
     }
 
-    if(filmeEdicaoId == null)
-        await cadastrarFilme(filme);
-    else
+    if(filmeEdicaoId)
         await atualizarFilme(filme);
+    else
+        await cadastrarFilme(filme);
 
     
     carregarFilmes();
@@ -251,21 +272,19 @@ async function cadastrarFilme(filme) {
     
   var filmeExiste = await buscarFilmePorTitulo(filme.titulo);
 
-  if(filmeExiste == null)
+  if(!filmeExiste){
+    const filmeId = gerarGuid();
+    filme._id = filmeId;
     await salvarFilmeAsync(filme);
+  }
   else 
-    alert('Filme já cadastrado');
+    alert(`Filme com titulo: ${filme.titulo} já cadastrado`);
 
 }
 
 async function atualizarFilme(filme){
 
-    var titulo = document.getElementById('tituloFilme').value;
-
-    if(titulo.trim() == filmeEdicaoId)
-        await editarFilmeAsync(filme);
-    else
-        alert('Não é possivel atualizar o titulo do filme');
+    await editarFilmeAsync(filmeEdicaoId, filme);
 
     filmeEdicaoId = null;
 }
@@ -278,9 +297,10 @@ async function excluirFilme(titulo){
 function carregarModalCadastrarFilme(){
     document.getElementById('modalFilmeTitulo').textContent = "Cadastrar Filme";
     document.getElementById('tituloFilme').value = '';
+    document.getElementById('anoLancamentoFilme').value = '';
     document.getElementById('sinopseFilme').value = '';
     document.getElementById('linkTrailerFilme').value = '';
-    document.getElementById('imagemFilme').value = '';
+    document.getElementById('linkImagemFilme').value = '';
     document.getElementById('categoriaFilme').value = '';
     abrirFecharFilmeModal();
 }
@@ -290,9 +310,10 @@ function carregarModalEditarFilme(filme)
     filmeEdicaoId = filme._id;
     document.getElementById('modalFilmeTitulo').textContent = "Editar Filme";
     document.getElementById('tituloFilme').value = filme.titulo;
+    document.getElementById('anoLancamentoFilme').value = filme.anoLancamento;
     document.getElementById('sinopseFilme').value = filme.sinopse;
     document.getElementById('linkTrailerFilme').value = filme.linkTrailer;
-    document.getElementById('imagemFilme').value = filme.imagem;
+    document.getElementById('linkImagemFilme').value = filme.linkImagem
     document.getElementById('categoriaFilme').value = filme.categoria;
     abrirFecharFilmeModal();
 } 
