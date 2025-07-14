@@ -17,6 +17,12 @@ document.querySelector('#navLogo').addEventListener('click', async () => {
     navMenu.classList.add('hidden');
 });
 
+document.querySelectorAll('.botaoSair').forEach(item => {
+    item.addEventListener('click', () => {
+        window.location.href = 'login.html';
+    });
+});
+
 function extrairVideoIdDoYoutube(url) {
     if (!url) return null;
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
