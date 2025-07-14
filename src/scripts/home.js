@@ -23,11 +23,12 @@ document.querySelectorAll('.botaoSair').forEach(item => {
     });
 });
 
-function extrairVideoIdDoYoutube(url) {
-    if (!url) return null;
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-    const match = url.match(regExp);
-    return (match && match[2].length === 11) ? match[2] : null;
+function obterLink(linkOriginal) {
+    if (linkOriginal.includes("watch?v=")) {
+        const videoId = linkOriginal.split("watch?v=")[1].split("&")[0];
+        return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`;
+    }
+    return linkOriginal;
 }
 
 async function carregarFilmeDestaque(categoria = null) {
@@ -48,8 +49,7 @@ async function carregarFilmeDestaque(categoria = null) {
         const filmeDestaqueElemento = document.createElement('div');
         filmeDestaqueElemento.classList.add('flex', 'w-full', 'h-full', 'flex-col', 'md:flex-row');
 
-        const videoId = extrairVideoIdDoYoutube(filme.linkTrailer);
-        const linkTrailerYoutube = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&rel=0`;
+        const link = obterLink(filme.linkTrailer);
 
         filmeDestaqueElemento.innerHTML = `
             <div class="hidden md:block md:w-1/2 w-full h-full text-white p-2 lg:p-4 flex flex-col justify-center">
@@ -65,7 +65,7 @@ async function carregarFilmeDestaque(categoria = null) {
             <div class="h-full w-full md:w-1/2 flex flex-col justify-center rounded-xs overflow-hidden"">
                 <iframe 
                     class="w-full h-full aspect-video" 
-                    src="${linkTrailerYoutube}" 
+                    src="${link}" 
                     frameborder="0" 
                     allow="autoplay; encrypted-media" 
                     allowfullscreen>
@@ -125,10 +125,8 @@ function abrirModal(filme) {
 
     modalContent.innerHTML = '';
 
-    const videoId = extrairVideoIdDoYoutube(filme.linkTrailer);
+    const link = obterLink(filme.linkTrailer);
     
-    const linkTrailerYoutube = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&rel=0`;
-
     const modalHTML = `
         <button onclick="fecharModal()" class="absolute top-2 right-4 text-white text-4xl font-bold hover:text-gray-300 z-20">×</button>
 
@@ -146,9 +144,9 @@ function abrirModal(filme) {
              <iframe 
                 id="modalTrailer"
                 class="w-full aspect-video" 
-                src="${linkTrailerYoutube}" 
+                src="${link}" 
                 frameborder="0" 
-                allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allow="autoplay; encrypted-media" 
                 allowfullscreen>
             </iframe>
         </div>

@@ -6,7 +6,7 @@ async function inicializarBancoDeDados() {
 
     try {
         await db.get(idControle);
-        console.log('Banco de dados já inicializado. Nenhuma ação necessária.');
+        console.log('Banco de dados já inicializado.');
     } catch (err) {
         if (err.status === 404) {
             console.log('Documento de controle não encontrado. Populando o banco de dados com filmes iniciais...');
