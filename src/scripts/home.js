@@ -140,7 +140,7 @@ function abrirModal(filme) {
              <iframe 
                 id="modalTrailer"
                 class="w-full aspect-video" 
-                src="${videoId ? linkTrailerYoutube : ''}" 
+                src="${linkTrailerYoutube}" 
                 frameborder="0" 
                 allow="autoplay; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>

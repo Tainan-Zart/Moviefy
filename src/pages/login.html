@@ -8,16 +8,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="relative min-h-screen">
+<body>
 
+    <div class="bg-amber-500 flex flex-col items-center justify-center min-h-screen">
 
-    <div class="bg-amber-500 flex flex-col items-center justify-center min-h-screen p-4 space-y-6">
-        <div class="flex justify-center">
-            <img src="../assets/logo.png" alt="Logo Moviefy" class="h-40" />
-        </div>
+        <img src="../assets/logo.png" alt="Logo Moviefy" class="h-40" />
     
-        <div class="bg-black rounded-lg p-8 w-full max-w-lg shadow-lg">
-            <h1 class="text-white font-semibold text-center mb-8 text-3xl">Login</h1>
+        <div class="bg-black rounded-md p-8 w-full max-w-lg">
+            <h1 class="text-white text-4xl font-semibold text-center mb-8">Login</h1>
             <form class="space-y-6" id="loginForm">
                 <input type="email" id="email" placeholder="Digite seu email"
                     class="w-full px-4 py-3 rounded text-black focus:outline-none focus:ring-2 focus:ring-amber-500 text-base"
@@ -34,7 +32,7 @@
     </div>
     
     <div id="alertaModal"
-        class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4 hidden z-50 h-full">
+        class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center p-4  h-full">
         <div class="bg-white p-6 rounded shadow-lg max-w-xs w-full">
             <h2 id="alertaMensagem" class="text-black text-center font-bold text-lg mb-4">Mensagem de Alerta</h2>
             <button id="alertaFechar"
